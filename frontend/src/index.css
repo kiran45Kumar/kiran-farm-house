@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Signika:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Roboto:ital,wght@0,100..900;1,100..900&family=Signika:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Ephesis&family=Roboto:ital,wght@0,100..900;1,100..900&family=Signika:wght@300..700&display=swap');
 @import "tailwindcss";
-.century-gothic{
-	font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+
+.century-gothic {
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
 }
-.signika-medium-500{
-	font-family: "Signika", sans-serif;
-   font-optical-sizing: auto;
+
+.signika-medium-500 {
+  font-family: "Signika", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 500;
-  font-style: normal;
+  font-style: medium;
 }
 
 .roboto-regular-400 {
@@ -16,22 +20,45 @@
   font-weight: 400;
   font-style: normal;
 }
-.logo{
+
+.logo {
   height: 150px;
   width: 150px;
   top: 5px;
-  left:43px;
+  left: 43px;
   object-fit: contain;
 }
-.navbar{
+
+.navbar {
   height: 626px;
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../src/assets/hero_image.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../src/assets/hero_image.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   opacity: 0.9;
-  
+
 }
-.letter-spacing{
+
+.letter-spacing {
   letter-spacing: 1px;
+}
+
+.img-height-width {
+  height: 197px;
+  width: 197px;
+  object-fit: cover;
+}
+.ephesis-regular {
+  font-family: "Ephesis", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.eb-garamond-regular {
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 0;
 }
