@@ -122,9 +122,26 @@
   line-break: auto;
   line-height: 27px;
 }
-.gallery-card-img{
+
+.gallery-card-img {
   height: 306px;
   width: 306px;
   border-radius: 10px;
-  outline: 2px dashed #616B1A;
+  outline: 2px dashed #616b1a;
+}
+
+.contact-img {
+  height: 600px;
+  width: 380px;
+  object-fit: cover;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.footer{
+  background-image: url('../src//assets/footerbg.jpg');
+  height: 384px;
+  background-size:cover;
+  object-fit: cover;
+  background-repeat: no-repeat;
 }

@@ -11,12 +11,14 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
+    "aos": "^3.0.0-beta.6",
     "icons": "^1.0.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.0",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.13.0",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.1.18",
+    "validator": "^13.15.26"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

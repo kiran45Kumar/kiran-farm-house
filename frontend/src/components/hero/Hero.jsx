@@ -17,10 +17,10 @@ const Hero = () => {
                     <div className="flex items-center justify-center">
                         <div className="image-container hero-left">
                             <div className="">
-                                <img src={hero_img_1} className="h-96 bg" alt="hero_img_1" />
-                                <img src={hero_img_2} className=" overlay" alt="hero_img_2" />
-                                <img src={hero_img_3} alt="hero_img_3" className="overlay2" />
-                                <img src={hero_img_4} alt="hero_img_4" className="overlay3" />
+                                <img src={hero_img_1}  loading="lazy" className="h-96 bg" alt="hero_img_1" />
+                                <img src={hero_img_2}  loading="lazy" className=" overlay" alt="hero_img_2" />
+                                <img src={hero_img_3}  loading="lazy" alt="hero_img_3" className="overlay2" />
+                                <img src={hero_img_4}  loading="lazy" alt="hero_img_4" className="overlay3" />
                             </div>
                         </div>
                     </div>

@@ -9,12 +9,12 @@ import client3_img from '../../assets/client3.jpg';
 const Testimonial = () => {
   return (
     <>
-      <div className='testimonial h-122 my-10 bg-[#FBF8F4]'>
-        <div className='p-1'>
+      <div className='testimonial h-122  bg-[#FBF8F4]'>
+        <div className=''>
           <div>
             <div className='flex justify-between items-center gap-20 m-20'>
-              <div className='eb-garamond-regular text-5xl text-[#616B1A]'>Words from people</div>
-              <div className='flex items-center justify-center gap-5'>
+              <div className='eb-garamond-regular text-5xl text-[#616B1A] p-2 mt-10'>Words from people</div>
+              <div className='flex items-center justify-center gap-5 p-2 mt-10'>
                 <div className='w-12 h-10 border border-[#404A3D] flex items-center justify-center rounded-md'><MdKeyboardArrowLeft cursor={"pointer"} fontSize={"18px"} /> </div>
                 <div className='w-12 h-10 border border-[#404A3D] flex items-center justify-center rounded-md'><MdKeyboardArrowRight cursor={"pointer"} fontSize={"18px"} /> </div>
               </div>
