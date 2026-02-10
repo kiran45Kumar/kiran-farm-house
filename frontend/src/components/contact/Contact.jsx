@@ -3,7 +3,8 @@ import icon from "../../assets/Icon.png";
 import vector_png from "../../assets/Vector.png";
 import validator from "validator";
 import { useState } from "react";
-import {submitContact} from "../../api/api";
+import { submitContact } from "../../api/api";
+import { toast } from "react-toastify";
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -17,23 +18,6 @@ const Contact = () => {
   const validateForm = () => {
     const newErrors = {};
 
-    if (!validator.isEmail(email)) {
-      newErrors.email = "Invalid email address";
-    }
-    if (phone.length < 10) {
-      newErrors.password = "Phone number should be length of 10";
-    }
-    if (!number) {
-      newErrors.password = "Number is required";
-    }
-    if (!name) {
-      newErrors.password = "Name is required";
-    }
-    if (!location) {
-      newErrors.password = "Location is required";
-    }
-    if (!/\S+@\S+\.\S+/.test(email))
-      newErrors.email = "Valid email is required";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -45,18 +29,54 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    if (!name) {
+      toast.error("Name is required");
+      setIsSubmitting(false);
+
+      return;
+    }
+    if (!number) {
+      toast.error("Number is required");
+      setIsSubmitting(false);
+
+      return;
+    }
+    if (number.length < 10) {
+      toast.error("Phone number should be length of 10");
+      setIsSubmitting(false);
+
+      return;
+    }
+    if (!validator.isEmail(email)) {
+      toast.error("Invalid email address");
+      setIsSubmitting(false);
+
+      return;
+    }
+    if (!location) {
+      toast.error("Location is required");
+      setIsSubmitting(false);
+
+      return;
+    }
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      toast.error("Valid email is required");
+      setIsSubmitting(false);
+
+      return;
+    }
     const contactData = { name, email, phone: number, location, message };
     console.log(contactData);
     try {
       await submitContact(contactData);
-      alert("Message sent successfully!");
+      toast.success("Message sent successfully!");
       setName("");
       setEmail("");
       setNumber("");
       setLocation("");
       setMessage("");
     } catch (error) {
-      alert(error.message);
+      toast.error(error);
     } finally {
       setIsSubmitting(false);
     }
@@ -90,7 +110,6 @@ const Contact = () => {
                     id="name"
                     className="bg-neutral-secondary-medium rounded-md border border-[#404A3D33] text-heading text-sm rounded-base focus: outline-0 focus: block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
                     placeholder="Your Name"
-                    required
                     onChange={(e) => handleChange(e, setName)}
                   />
                   {errors.name && (
@@ -103,7 +122,6 @@ const Contact = () => {
                     id="phone"
                     className="bg-neutral-secondary-medium rounded-md border border-[#404A3D33] text-heading text-sm rounded-base focus:outline-0 focus: block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
                     placeholder="Phone Number"
-                    required
                     onChange={(e) => handleChange(e, setNumber)}
                   />
                 </div>
@@ -113,7 +131,6 @@ const Contact = () => {
                     id="email"
                     className="bg-neutral-secondary-medium rounded-md border border-[#404A3D33] text-heading text-sm rounded-base focus: focus:outline-0 block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
                     placeholder="Email Address"
-                    required
                     onChange={(e) => handleChange(e, setEmail)}
                   />
                   {errors.email && (
@@ -126,7 +143,6 @@ const Contact = () => {
                     id="subject"
                     className="bg-neutral-secondary-medium rounded-md border border-[#404A3D33] text-heading text-sm rounded-base focus:outline-0 block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
                     placeholder="Location"
-                    required
                     onChange={(e) => handleChange(e, setLocation)}
                   />
                 </div>
@@ -141,7 +157,7 @@ const Contact = () => {
               ></textarea>
               <div>
                 <button className="bg-[#5B8C51] p-3 px-5 text-white text-xs rounded-full my-4 flex items-center gap-2 cursor-pointer">
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? "Sending..." : "Send Message"}
 
                   <img
                     src={vector_png}

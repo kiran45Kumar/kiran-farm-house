@@ -7,7 +7,8 @@ import Gallery from "./components/gallary/Gallery";
 import Testimonial from "./components/testimonials/Testimonial";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "aos/dist/aos.css";
 import AOS from "aos";
 AOS.init({
@@ -21,6 +22,7 @@ const App = () => {
   return (
     <div>
       <BrowserRouter>
+      <ToastContainer/>
         <Navbar />
         <div data-aos="fade-up" data-aos-anchor-placement="top-center">
           <Title
