@@ -66,7 +66,7 @@ const Contact = () => {
       return;
     }
     const contactData = { name, email, phone: number, location, message };
-    console.log(contactData);
+    // console.log(contactData);
     try {
       await submitContact(contactData);
       toast.success("Message sent successfully!");
