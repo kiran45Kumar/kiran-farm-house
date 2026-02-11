@@ -9,7 +9,7 @@ const Navbar = () => {
                 <div className="top-section century-gothic flex justify-between items-center p-2">
                     <a href="/">
                         <div className="logo">
-                            <img src={farmhouse_logo} alt="Website Logo" className="logo" />
+                            <img src={farmhouse_logo} alt="Website Logo" className="logo" loading="eager" />
                         </div>
                     </a>
                     <div>
@@ -45,6 +45,7 @@ const Navbar = () => {
                             src={vector_png}
                             alt="contact-vector-icon"
                             className="h-3 w-3"
+                             loading="eager"
                         />
                     </div>
                 </div>
@@ -57,6 +58,7 @@ const Navbar = () => {
                                 src={olive_tree}
                                 alt="olive-tree-remove-bg"
                                 className="img-height-width"
+                                 loading="eager"
                             />
                         </div>
                         <div className="w-500">
@@ -65,11 +67,6 @@ const Navbar = () => {
                             </h2>
                         </div>
                     </div>
-                </div>
-            </section>
-            <section className="hero-section">
-                <div>
-                    
                 </div>
             </section>
         </>

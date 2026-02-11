@@ -122,12 +122,47 @@
   line-break: auto;
   line-height: 27px;
 }
+.gallery-card {
+  position: relative;
+  width: 300px;
+  overflow: hidden;
+  cursor: pointer;
+  border: dashed 2px #616B1A;
+  border-radius: 10px;
+}
 
 .gallery-card-img {
-  height: 306px;
-  width: 306px;
-  border-radius: 10px;
-  outline: 2px dashed #616b1a;
+  width: 350px;
+  height: 300px;
+  display: block;
+  transition: transform 0.4s ease, z-index 0.4s ease;
+  
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  
+}
+
+
+.gallery-card:hover {
+  z-index: 10;
+}
+
+.gallery-card:hover .gallery-card-img {
+  transform: scale(1.1);
+}
+
+.gallery-card:hover .gallery-overlay {
+  opacity: 1;
 }
 
 .contact-img {

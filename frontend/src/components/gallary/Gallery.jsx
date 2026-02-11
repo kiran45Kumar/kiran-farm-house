@@ -33,62 +33,95 @@ const Gallery = () => {
               className="gallery-card-img"
               loading="lazy"
             />
+
+            <div className="gallery-overlay">
+              <h3>Image Title</h3>
+              <p>Short description goes here</p>
+            </div>
           </div>
           <div className="gallery-card">
             <img
               src={gallery_img2}
               alt="gallery_img"
-              className="gallery-card-img"
+              className="gallery-card-img cursor-pointer"
               loading="lazy"
             />
+            <div className="gallery-overlay">
+              <h3>Image Title</h3>
+              <p>Short description goes here</p>
+            </div>
           </div>
           <div className="gallery-card">
             <img
               src={gallery_img3}
               alt="gallery_img"
-              className="gallery-card-img"
+              className="gallery-card-img cursor-pointer"
               loading="lazy"
             />
+            <div className="gallery-overlay">
+              <h3>Image Title</h3>
+              <p>Short description goes here</p>
+            </div>
           </div>
           <div className="gallery-card">
             <img
               src={gallery_img4}
               alt="gallery_img"
-              className="gallery-card-img"
+              className="gallery-card-img cursor-pointer"
               loading="lazy"
             />
+            <div className="gallery-overlay">
+              <h3>Image Title</h3>
+              <p>Short description goes here</p>
+            </div>
           </div>
           <div className="gallery-card">
             <img
               src={gallery_img5}
               alt="gallery_img"
-              className="gallery-card-img"
+              className="gallery-card-img cursor-pointer"
               loading="lazy"
             />
+            <div className="gallery-overlay">
+              <h3>Image Title</h3>
+              <p>Short description goes here</p>
+            </div>
           </div>
           <div className="gallery-card">
             <img
               src={gallery_img6}
               alt="gallery_img"
-              className="gallery-card-img"
+              className="gallery-card-img cursor-pointer"
               loading="lazy"
             />
+            <div className="gallery-overlay">
+              <h3>Image Title</h3>
+              <p>Short description goes here</p>
+            </div>
           </div>
           <div className="gallery-card">
             <img
               src={gallery_img7}
               alt="gallery_img"
-              className="gallery-card-img"
+              className="gallery-card-img cursor-pointer"
               loading="lazy"
             />
+            <div className="gallery-overlay">
+              <h3>Image Title</h3>
+              <p>Short description goes here</p>
+            </div>
           </div>
           <div className="gallery-card">
             <img
               src={gallery_img8}
               alt="gallery_img"
-              className="gallery-card-img"
+              className="gallery-card-img cursor-pointer"
               loading="lazy"
             />
+            <div className="gallery-overlay">
+              <h3>Image Title</h3>
+              <p>Short description goes here</p>
+            </div>
           </div>
         </div>
       </div>
