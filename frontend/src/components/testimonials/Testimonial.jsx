@@ -9,6 +9,11 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { useRef } from "react";
 
+import '@splidejs/splide/css/skyblue';
+import '@splidejs/splide/css/sea-green';
+
+import '@splidejs/splide/css/core';
+
 const Testimonial = () => {
   const [testimonials, setTestimonials] = useState([]);
   const splideRef = useRef(null);

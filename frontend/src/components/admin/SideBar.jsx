@@ -4,7 +4,6 @@ import { SiGooglephotos } from "react-icons/si";
 import { VscFeedback } from "react-icons/vsc";
 import { BiCategory } from "react-icons/bi";
 import { PiSignOutBold } from "react-icons/pi";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { NavLink } from "react-router-dom";
@@ -15,7 +14,7 @@ const SideBar = () => {
     toast.success("Logout Successfull..");
     setTimeout(() => {
       navigate("/");
-    }, 2000);
+    }, 1000);
   };
   return (
     <div>

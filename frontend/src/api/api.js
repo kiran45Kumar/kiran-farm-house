@@ -80,6 +80,25 @@ export const addGallery = async (formdata) => {
   }
 };
 
+export const deleteCategory = async (id) => {
+  try {
+    const token = localStorage.getItem("adminToken");
+    const response = await axios.delete(`http://localhost:5000/api/categories/${id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+    return response.data;
+  } catch (error) {
+
+    if (error.response && error.response.data.message) {
+      throw new Error(error.response.data.message);
+    }
+
+    throw new Error("Something went wrong. Try again.");
+  }
+};
+
 export const getGalleries = async () => {
   try {
     const token = localStorage.getItem("adminToken");
@@ -140,7 +159,6 @@ export const addTestimonial = async (form) => {
 
 export const getTestimonials = async () => {
   try {
-    const token = localStorage.getItem("adminToken");
     const response = await axios.get("http://localhost:5000/api/testimonials/");
     return response.data;
   } catch (error) {
