@@ -16,8 +16,8 @@ const AdminContent = () => {
   }, []);
   return (
     <>
-      <div className="admin-content bg-gray-50 w-full">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+      <div className="admin-content bg-gray-50 w-full min-h-180  rounded-md shadow-2xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 m-8">
           <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow duration-300">
             <h2 className="text-gray-500 font-medium text-sm">
               Total Galleries

@@ -6,7 +6,6 @@ exports.submitContact = async (req, res) => {
         res.status(201).json(savedContact);
     }
     catch (error) {
-        // console.log('Error in backend:', error);
         res.status(500).json({ message: 'Server Error', error:error.message });
     }
 };

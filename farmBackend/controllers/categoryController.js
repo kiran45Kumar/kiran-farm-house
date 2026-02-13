@@ -7,6 +7,8 @@ exports.createCategory = async (req, res) => {
             name,
             description,
         );
+        const io = req.app.get('io'); 
+        io.emit('category-created', savedCategory);
         res.status(201).json(savedCategory);
     } catch (error) {
         res.status(500).json({ message: error.message });

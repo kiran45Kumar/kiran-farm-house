@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { getGalleries, getCategories } from "../../api/api";
-
+import { io } from 'socket.io-client';
 const Gallery = () => {
   const [galleries, setGalleries] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const socket = io("http://localhost:5000");
   useEffect(() => {
     const fetchGalleries = async () => {
       try {
@@ -15,6 +16,14 @@ const Gallery = () => {
       }
     };
     fetchGalleries();
+    socket.on('gallery-created', (newGallery) => {
+      setGalleries(prev => [...prev, newGallery]);
+    });
+    
+    return () => {
+      socket.off('gallery-created');
+
+    };
   }, []);
   useEffect(() => {
     const fetchCategories = async () => {
@@ -26,6 +35,15 @@ const Gallery = () => {
       }
     };
     fetchCategories();
+     socket.on('category-created', (newCategory) => {
+      setCategories(prev => [...prev, newCategory]);
+    });
+    socket.on('category-updated', (newGallery) => {
+      setGalleries(prev => [...prev, newGallery]);
+    });
+    return () => {
+      socket.off('category-created');
+    };
   }, []);
 
   return (
@@ -36,15 +54,15 @@ const Gallery = () => {
           <ul className="flex items-center justify-center gap-20 cursor-pointer roboto-regular-400 text-[#404A3D]">
             <li
               className={`flex items-center justify-center h-15 w-30 rounded-full text-white ${selectedCategory === "All"
-                  ? "bg-[#404A3D]"
-                  : "bg-gray-300 text-black"
+                ? "bg-[#404A3D]"
+                : "bg-gray-300 text-black"
                 }`}
               onClick={() => setSelectedCategory("All")}
             >
               All
             </li>
 
-            {categories.map((category, index) => (
+            {categories.filter((category) => !category.isDeleted).map((category, index) => (
               <li
                 key={index}
                 className={`flex items-center justify-center h-15 w-30 rounded-full cursor-pointer `}

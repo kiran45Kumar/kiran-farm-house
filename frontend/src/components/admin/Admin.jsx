@@ -10,7 +10,7 @@ const Admin = () => {
     <div className="admin-dashboard m-0 p-0 roboto-regular-400">
       <div className="flex items-center">
         <SideBar />
-        <div className="flex-1 0 p-6 overflow-auto">
+        <div className="flex-1 0 p-6 overflow-auto ">
           <Outlet />  
         </div>      
       </div>

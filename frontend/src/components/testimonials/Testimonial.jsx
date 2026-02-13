@@ -112,7 +112,7 @@ const Testimonial = () => {
                 },
               }}
             >
-              {testimonials.map((testimonial, index) => (
+              {testimonials.filter((test) => !test.isDeleted).map((testimonial, index) => (
                 <SplideSlide key={index}>
                   <div className='testimonial-card h-60 p-5 w-80 flex flex-col items-start justify-center gap-3 bg-[#FFFFFF]'>
 

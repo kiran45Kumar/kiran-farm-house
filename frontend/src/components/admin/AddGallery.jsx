@@ -64,7 +64,6 @@ const AddGallery = () => {
             await addGallery(form);
 
             toast.success("Gallery added successfully");
-            navigate('adming/gallery/view');
             setFormData({
                 title: "",
                 description: "",

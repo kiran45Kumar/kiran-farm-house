@@ -35,8 +35,7 @@ const AddTestimonial = () => {
                 message: testimonial.message,
                 rating: testimonial.rating
             });
-            toast.success("Testimonial added successfully");
-           navigate('/admin/testimonial/view');
+            toast.success("Testimonial added successfully");    
             setTestimonial({
                 cname: "",
                 message: "",

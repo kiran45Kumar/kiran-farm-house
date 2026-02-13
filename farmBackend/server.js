@@ -6,7 +6,11 @@ const galleryRoutes = require('./routes/galleryRoutes');
 const testimonialRoutes = require('./routes/testimonialRoutes');
 const categoryRoutes = require('./routes/categoryRoutes');
 const adminRoutes = require('./routes/adminRoutes')
+const http = require('http');
+const { Server } = require('socket.io');
+
 require('dotenv').config();
+
 connectDB();
 
 const corsOptions = {
@@ -17,7 +21,11 @@ const corsOptions = {
 };
 const app = express();
 const PORT = process.env.PORT || 5000;
-
+const server = http.createServer(app);
+const io = new Server(server, {
+  cors: { origin: '*' } // adjust your frontend URL in production
+});
+app.set('io', io);
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
@@ -26,7 +34,7 @@ app.use('/api/gallery', galleryRoutes);
 app.use('/api/testimonials', testimonialRoutes);
 app.use('/api/categories', categoryRoutes);
 app.use('/api/admin', adminRoutes);
-app.listen(PORT, (error) => {
+server.listen(PORT, (error) => {
     if(!error)
         console.log("Server is Successfully Running, and App is listening on port "+ PORT);
     else 
